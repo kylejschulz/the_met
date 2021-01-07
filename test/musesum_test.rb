@@ -64,10 +64,10 @@ class MuseumTest < Minitest::Test
     @dmns.add_exhibit(@dead_sea_scrolls)
     @dmns.add_exhibit(@imax)
     expected = {
-      @gems_and_minerals => [@patron_1],
-      @dead_sea_scrolls => [@patron_1, @patron_2, @patron_3],
-      @imax => []
-    }
+                @gems_and_minerals => [@patron_1],
+                @dead_sea_scrolls => [@patron_1, @patron_2, @patron_3],
+                @imax => []
+              }
 
     assert_equal expected, @dmns.patrons_by_exhibit_interest
   end
@@ -75,8 +75,6 @@ class MuseumTest < Minitest::Test
   def test_it_can_return_ticket_lottery_contestants
     @patron_2.add_interest("Dead Sea Scrolls")
     @patron_4.add_interest("Dead Sea Scrolls")
-
-
     @dmns.add_exhibit(@gems_and_minerals)
     @dmns.add_exhibit(@dead_sea_scrolls)
     @dmns.add_exhibit(@imax)
@@ -100,7 +98,6 @@ class MuseumTest < Minitest::Test
     the_met.stubs(:announce_lottery_winner).returns("No winners for this lottery")
 
     assert_equal "No winners for this lottery", the_met.announce_lottery_winner(dali)# =>
-
   end
 end
 
