@@ -11,7 +11,6 @@ class Museum
   end
 
   def recommend_exhibits(patron)
-    #array of exhibit objects
     interested = []
     @exhibits.select do |exhibit|
        patron.interests.each do |interest|
@@ -55,5 +54,5 @@ class Museum
     else
       puts "#{draw_lottery_winner(exhibit)} has won the #{exhibit.name} lottery"
     end
-  end 
+  end
 end
